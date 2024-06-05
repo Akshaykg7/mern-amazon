@@ -33,7 +33,7 @@ function App() {
 
 
     <main>
-      <Container>
+      <Container className="mt-3">
       <Routes className="homeScreen">
 
           <Route path="/product/:slug" element={<ProductScreen />} />

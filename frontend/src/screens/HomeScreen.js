@@ -18,7 +18,7 @@ const reducer = (state, action) => {
     default:
       return state;
   }
-}
+};
 
 function HomeScreen() {
   const [{ loading, error, products }, dispatch] = useReducer(logger(reducer), {
