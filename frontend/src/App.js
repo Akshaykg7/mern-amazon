@@ -1,12 +1,20 @@
-import React from 'react'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import React, { useContext } from 'react'
+import { BrowserRouter, Link, Route, Routes } from 'react-router-dom'
 import HomeScreen from "./screens/HomeScreen";
 import ProductScreen from "./screens/ProductScreen";
 import Navbar from 'react-bootstrap/Navbar'
+import Badge from 'react-bootstrap/Badge'
+import Nav from 'react-bootstrap/Nav'
 import Container from 'react-bootstrap/Container'
 import { LinkContainer } from 'react-router-bootstrap'
+import { Store } from './Store';
+import CardText from 'react-bootstrap/esm/CardText';
 
 function App() {
+
+  const { state } = useContext(Store);
+  const { cart } = state;
+
   return (
     
     <BrowserRouter>
@@ -23,6 +31,18 @@ function App() {
             <Navbar.Brand>amazon</Navbar.Brand>
 
             </LinkContainer>
+
+                <Nav className="mt-3">
+                    <Link to="/cart" className="nav-link">
+                    Cart
+                      {CardText.cartItems.length > 0 && (
+                        <Badge pill bg="danger">
+                          {cart.cartItems.length}
+                        </Badge>
+                      )}
+                    </Link>
+                </Nav>
+
         </Container>
 
       </Navbar>
