@@ -27,8 +27,8 @@ function App() {
               <Link to="/" className='Home'>  {}
                 <Navbar.Brand>amazon</Navbar.Brand>
               </Link>
-              <Nav className="mt-3">
-                <Link to="/cart" className="nav-link">
+              <Nav className="mt-3" >
+                <Link to="/cart" className="nav-link " >
                   Cart
                   {cart.cartItems.length > 0 && (
                     <Badge pill bg="danger">

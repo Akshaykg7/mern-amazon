@@ -10,7 +10,7 @@ const initialState = {
 };
 function reducer(state, action) {
     switch(action.type) {
-        case 'CAART_ADD_ITEM':
+        case 'CART_ADD_ITEM':
             // add to cart
             return {...state, cart:{
                  ...state.cart,
@@ -25,5 +25,5 @@ function reducer(state, action) {
 export function StoreProvider(props) {
     const [state, dispatch] = useReducer(reducer, initialState);
     const value = {state, dispatch};
-    return <Store.Provider value={value}>{props.children}</Store.Provider>
+    return <Store.Provider value={value}>{props.children}</Store.Provider>;
 }
